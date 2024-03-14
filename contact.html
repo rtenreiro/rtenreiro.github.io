@@ -1,0 +1,245 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<title> Ramon Tenreiro | Sharing creations with you . </title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" 
+<meta name="Keywords" content="Tenreiro, Architecture, Painting, Building, Games"/>
+<meta name="description" content="site to share creations of Ramon Tenreiro"/>
+<meta name="Author" content="Ramon Tenreiro" />
+<meta name="robots" content="index, follow"/>
+<meta property='og:title' content='Ramon Tenreiro | Sharing creations with you .'/>
+<meta property='og:description' content='Architecture. Painting. Games'/>
+<meta property='og:url' content='https://www.tenreiros.com'/>
+<meta property='og:site_name' content='Ramon Tenreiro'/>
+<meta property='og:type' content='website'/>
+<link href="boilerplate.css" rel="stylesheet" type="text/css">
+<!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link rel="apple-touch-icon-precomposed" href="images/favicon32.png">
+    <link rel="shortcut icon" href="images/favicon32.png">
+<style css>
+/* contact form
+#####################################################################################
+*/
+#input, #contact-form, #contact-form textarea {
+    width:80%;
+    background:#efefef;
+    border:1px solid #dedede;
+    padding:10px;
+    margin-top:3px;
+    font-size:0.9em;
+    color:#3a3a3a;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form input[type="url"],
+#contact-form textarea {
+  width:300px;
+  box-sizing: 300 px;
+    box-shadow:inset 0 1px 2px #DDD, 0 1px 0 #FFF;
+    -webkit-box-shadow:inset 0 1px 2px #DDD, 0 1px 0 #FFF;
+    -moz-box-shadow:inset 0 1px 2px #DDD, 0 1px 0 #FFF;
+    border:1px solid #CCC;
+    background:#FFF;
+    margin:0 0 5px;
+    padding:10px;
+    border-radius:5px
+}
+#contact-form button[type="submit"] {
+    cursor:pointer;
+    width:300px;
+    border:none;
+    background:#666;
+    background-image:linear-gradient(bottom, #666 0%, #333 52%);
+    background-image:-moz-linear-gradient(bottom, #666 0%, #333 52%);
+    background-image:-webkit-linear-gradient(bottom, #666 0%, #333 52%);
+    color:#FFF;
+    margin:0 0 5px;
+    padding:10px;
+    border-radius:5px;
+}
+::-webkit-input-placeholder {
+    color:#333;
+}
+:-moz-placeholder {
+    color:#333;
+}
+::-moz-placeholder {
+    color:#333;
+}
+:-ms-input-placeholder {
+    color:#333;
+}
+/*ASIDES & FOOTER
+#####################################################################################
+*/
+#address{
+  float: left;
+  margin-left: 50px;
+  margin-top: 30px;
+  color: #333;
+  font-size: 12px;
+  }
+  
+.address p{
+  color:#CCCCCC;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    line-height:26px;
+  }
+  
+#formulario{
+  float:left;
+  width:400px;
+  margin-left:15px;
+  border-right:1px dotted #CCCCCC;
+  margin-top:30px;
+  }
+  
+.formulario input{
+  font-size:12px;
+  }
+#TTD {
+  font-color: #333;
+  color: #333;
+  } 
+  
+table.formulario tr td{
+  color:#333;
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+  }
+  
+.tit_form{
+   color:#333;
+   font-family:Arial, Helvetica, sans-serif;
+   font-size:12px;
+  }
+    
+aside h3 {
+font-size: 18px;
+}
+</style>
+<? sendEmail.php
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+    $from = 'From: $email'; 
+    $to = 'tenreiroramon@gmail.com'; 
+    $subject = 'From www.tenreiros.com';
+    $human = $_POST['human'];
+			
+    $body = "From: $name\n E-Mail: $email\n Message:\n $message";
+    $header = 'From: '$email"\r\n";
+    $header = "X-Mailer: PHP/".phpversion() ."\r\n";
+    $header = "Mime-Version: 1.0 \r\n";
+    $header = "Content-Type: text/plain";   
+    mail($to, $subject, utf8_decode(($body), $header);
+
+    echo '&estatus=ok&';
+?>
+<script type="text/javascript">
+
+//Validar una dirección de email
+function validacion(){
+ valor = document.getElementsByName("email").value;
+ if( !(/[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/.test(valor)) ) {
+    return false;}
+ return true ; //si quieres enviar el formulario
+
+}
+
+</script>
+
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+<!-- Block languages module -->
+
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="index.html">Ramon Tenreiro </a><a href="contactes.html" title="Español"><img src="images/sp.jpg" alt="es" width="16" height="11">      </a><img src="images/us16.jpg"alt="en" width="16" height="11">
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="https://wwww.tenreiros.com/index.html">Home</a>
+              </li>
+              <li class="">
+                <a href="https://wwww.tenreiros.com/aboutme.html">About Me</a>
+              </li>
+              <li class="">
+                <a href="https://www.tenreiros.com/dash/dash.html">Things I made</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>Ramon Tenreiro</h1>
+    <p class="lead">Stay in touch with you!</p>
+  </div>
+</header>
+  
+   <div class="row-fluid" class="span12" align="center">
+   <h3>Stay in touch..</h3><h4 class="email"><a href="mailto:ramon@tenreiros.com"> Mail me</a></h4>     
+          <p class="email"><a href="mailto:ramon@tenreiros.com">Email: Ramon Tenreiro</a></p> <h4>Stay in touch with you</h4>    	
+      </div><!--cierra direccion-->
+   <div class="row-fluid" class="span12" align="center">
+<form name="brv-form" method="post" action="https://www.tenreiros.com" enctype="multipart/form-data">
+First name <input id="first_name" name="first_name" type="text" class="form-control">
+Name <input id="name" name="name" type="text" class="form-control">
+Email <input id="email" name="email" type="email" class="form-control" placeholder="example@email.com">
+Language <select id="language" name="language" class="form-control">
+<option value="1">English</option>
+<option value="4">Español</option>
+</select>
+Company <input id="date_birth" name="date_birth" type="date" class="form-control">
+<br><div style="text-align:center;">
+	<button type="submit" class="btn btn-primary">Inscription</button></div></form>
+</div>
+  <!-- Footer
+    ===.=============================================== -->
+      <footer class="footer">
+       <div class="container">
+          <p>Designed and built by Ramon Tenreiro. &copy; 2013-2019 </p>
+        </div>  
+        </footer>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script> 
+</body>
+</html>
