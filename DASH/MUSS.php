@@ -7,7 +7,7 @@
     <meta name="author" content="Ramon Tenreiro">
     <meta property='og:title' content='Ramon Tenreiro | juegos, mus, html,javascript'/>
     <meta property='og:description' content='juegos, mus, html,javascript'/>
-    <meta property='og:url' content='http://www.tenreiros.com'/>
+    <meta property='og:url' content='http://rtenreiro.github.io'/>
     <meta property='og:site_name' content='Ramon Tenreiro'/>
     <meta property='og:type' content='website'/>
     <!-- Le styles -->
@@ -15,8 +15,8 @@
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
     <link href="css/docs.css" rel="stylesheet">
     <link href="js/google-code-prettify/prettify.css" rel="stylesheet">
-    <link rel="apple-touch-icon-precomposed" href="images/favicon32.png">
-    <link rel="shortcut icon" href="images/favicon32.png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicon32.png">
+    <link rel="shortcut icon" href="img/favicon32.png">
     <style type="text/css">
 		tableR {
 				width: 80%;
@@ -232,10 +232,10 @@
       </table>
       </div>
       <div align="center" >
-            <div class="card"><img id="player_card1" src="images/40/card_back.png" width="75" height="104"></div>
-            <div class="card"><img id="player_card2" src="images/40/card_back.png" width="75" height="104"></div>
-            <div class="card"><img id="player_card3" src="images/40/card_back.png" width="75" height="104"></div>
-            <div class="card"><img id="player_card4" src="images/40/card_back.png" width="75" height="104"></div>
+            <div class="card"><img id="player_card1" src="img/40/card_back.png" width="75" height="104"></div>
+            <div class="card"><img id="player_card2" src="img/40/card_back.png" width="75" height="104"></div>
+            <div class="card"><img id="player_card3" src="img/40/card_back.png" width="75" height="104"></div>
+            <div class="card"><img id="player_card4" src="img/40/card_back.png" width="75" height="104"></div>
 
         </div> 
         <div align="center">
@@ -247,38 +247,38 @@
      </div>           
        </div><!-- Row Fluid -->
        <audio id="musica" preload="auto">
-            <source src="sounds/Kissing in the Rain.mp3" type="audio/mp3">
-            <source src="sounds/Kissing in the Rain.wav" type="audio/wav">
+            <source src="img/Kissing in the Rain.mp3" type="audio/mp3">
+            <source src="img/Kissing in the Rain.wav" type="audio/wav">
         </audio> 
         <audio id="winner" preload="auto">
-            <source src="sounds/alegria.mp3" type="audio/mp3">
+            <source src="img/alegria.mp3" type="audio/mp3">
         </audio>
         <audio id="loser" preload="auto">
-            <source src="sounds/mozart.mp3" type="audio/mp3">
+            <source src="img/mozart.mp3" type="audio/mp3">
         </audio>
         <audio id="shuffle" preload="auto">
-            <source src="sounds/shuffle.ogg" type="audio/ogg">
-            <source src="sounds/shuffle.mp3" type="audio/mp3">
-            <source src="sounds/shuffle.wav" type="audio/wav">
+            <source src="img/shuffle.ogg" type="audio/ogg">
+            <source src="img/shuffle.mp3" type="audio/mp3">
+            <source src="img/shuffle.wav" type="audio/wav">
         </audio>
         <audio id="card_drop" preload="auto">
-            <source src="sounds/cardSlap.ogg" type="audio/ogg">
-            <source src="sounds/cardSlap.mp3" type="audio/mp3">
-            <source src="sounds/cardSlap.wav" type="audio/wav">
+            <source src="img/cardSlap.ogg" type="audio/ogg">
+            <source src="img/cardSlap.mp3" type="audio/mp3">
+            <source src="img/cardSlap.wav" type="audio/wav">
         </audio>
         <audio id="win" preload="auto">
-            <source src="sounds/win.ogg" type="audio/ogg">
-            <source src="sounds/win.mp3" type="audio/mp3">
-            <source src="sounds/win.wav" type="audio/wav">
+            <source src="img/win.ogg" type="audio/ogg">
+            <source src="img/win.mp3" type="audio/mp3">
+            <source src="img/win.wav" type="audio/wav">
         </audio>
         <audio id="lose" preload="auto">
-            <source src="sounds/lose.ogg" type="audio/ogg">
-            <source src="sounds/lose.mp3" type="audio/mp3">
-            <source src="sounds/lose.wav" type="audio/wav">
+            <source src="img/lose.ogg" type="audio/ogg">
+            <source src="img/lose.mp3" type="audio/mp3">
+            <source src="img/lose.wav" type="audio/wav">
         </audio>
         <div class="row-fluid"><!--Handlers-->
            <a <button type="button" class="btn btn-info" href="https://es.wikipedia.org/wiki/Mus">Reglas MUS</a>
-           <a <button type="button" class="btn btn-danger" href="http://www.tenreiros.com/games2.html">Regresar</a> 
+           <a <button type="button" class="btn btn-danger" href="https://rtenreiro.github.io/DASH/dash.html">Regresar</a> 
             <input type="checkbox" id="play_sounds" checked>Sonido</input></br>
         </div>  
 </div>
@@ -286,7 +286,7 @@
    
            <!-- Footer
         ================================================== -->
-        <footer class="footer">by Ramon Tenreiro &copy; 2013-2018</footer>       
+        <footer class="footer">by Ramon Tenreiro &copy; 2013-2024</footer>       
     <!-- Le javascript
     ================================================== -->
     <script src="js/jquery.js"></script>
@@ -302,7 +302,7 @@
     <script src="js/bootstrap-collapse.js"></script>
     <script src="js/bootstrap-carousel.js"></script>
     <script src="js/bootstrap-typeahead.js"></script>
-    <script src="lib/Mus4.js"></script>
+    <script src="js/Mus4.js"></script>
     <script>
    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
