@@ -1,0 +1,112 @@
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Ramon Tenreiro | Asteroide </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="site to share creations of Ramon Tenreiro">
+    <meta name="author" content="Ramon Tenreiro">
+    <meta property='og:title' content='Ramon Tenreiro | Sharing creations with you .'/>
+    <meta property='og:description' content='Architecture. Painting. Games'/>
+    <meta property='og:url' content='https://www.tenreiros.com'/>
+    <meta property='og:site_name' content='Ramon Tenreiro'/>
+    <meta property='og:type' content='website'/>
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link rel="apple-touch-icon-precomposed" href="images/favicon32.png">
+    <link rel="shortcut icon" href="images/favicon32.png">
+   <script src="script/soundmanager2-min.js"></script>
+      <script>
+			var soundManagerLoaded = false;
+			soundManager.flashVersion = 9;
+			soundManager.useFastPolling = true;
+			soundManager.useHighPerformance = true;
+			soundManager.onready(function() {
+			   soundManagerLoaded = true;
+			});
+			soundManager.ontimeout(function() {
+			   soundManagerLoaded = true;
+			   soundManager = false;
+			});
+			soundManager.url = 'swf/';
+	  </script>
+	<style type="text/css">	      
+	.space{
+   		background-image: url(images/asteroid_bg.jpg);
+   		background-repeat: no-repeat; 
+	}
+	canvas{
+   		background-color: #000;
+   		border: 1px solid #888;
+		margin: 40px
+	}
+		h1 {
+			font-size: 24px;
+			}
+		.jumbotron {
+			padding: 0px 0;
+			
+			}	
+				
+</style>
+   </head>
+    <body data-spy="scroll" data-target=".bs-docs-sidebar" body onload="init()">
+   
+<div class="accordion-heading"><a class="accordion-toggle" data-toggle="collapse" href="#collapseOne"><B>MOSTRAR TABLERO</B></a> </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+       <div class="row-fluid"> 
+       <div class="span6 offset1">
+              <p class="left heading">Instrucciones:</p>
+              <p>Flechas Izquierda y derecha. Direccion de la Nave</p>
+              <p>Flechas arriba y abajo: Acelerar y Escudo</p>
+              <p>Barra espaciadora:Disparar</p>
+              <p>Z: Bombas</p>
+         </div>     
+       </div> 
+     </div>
+     </div> 
+     <div class="space">             
+     <div class="row-fluid"> 
+     	<div class="span6 offset1" >
+            <canvas class="box-shadow" id="canvas" width="640" height="640"></canvas> 
+    	</div> 
+       </div>
+      </div>  
+           <!-- Footer
+        ================================================== -->
+        <footer class="footer">
+            <p>Designed and built by Ramon Tenreiro.&copy; 2013-2019 </p>
+        </footer>   
+     </div><!-- Container -->
+    
+    
+    <!-- Le javascript
+    ================================================== -->
+   <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    
+	<script src="script/mathlib.js"></script>
+     <script src="script/gamelib.js"></script>
+     <script src="script/asteroids_main.js"></script>
+     <script src="script/asteroids_player.js"></script>
+     <script src="script/asteroids_weapons.js"></script>
+     <script src="script/asteroids_enemies.js"></script>
+     <script src="script/asteroids_effects.js"></script>
+     <script src="script/asteroids_prerender.js"></script>
+  </body>
+</html>>
