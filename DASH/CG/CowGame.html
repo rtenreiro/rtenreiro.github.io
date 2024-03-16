@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cowgame by Ramon Tenreiro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="site to share creations of Ramon Tenreiro">
+    <meta name="author" content="Ramon Tenreiro">
+    <meta property='og:title' content='Ramon Tenreiro | Sharing creations with you .'/>
+    <meta property='og:description' content='Architecture. Painting. Games'/>
+    <meta property='og:url' content='https://rtenreiro.github.io'/>
+    <meta property='og:site_name' content='Ramon Tenreiro'/>
+    <meta property='og:type' content='website'/>
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+    <link href="css/prettify.css" rel="stylesheet">
+<script src="libs/easeljs-0.6.0.min.js"></script>
+<script src="libs/tweenjs-0.4.0.min.js"></script>
+<script src="libs/movieclip-0.6.0.min.js"></script>
+<script src="libs/preloadjs-0.3.0.min.js"></script>
+<script src="libs/soundjs-0.4.0.min.js"></script>
+<script src="libs/PlatypusGame.js"></script>
+<script>
+var canvas, stage, exportRoot, images;
+var platypii = [];
+var score = 0;
+function init() {
+	canvas = document.getElementById("canvas");
+    context = canvas.getContext('2d');
+    // resize the canvas to fill browser window dynamically
+	images = images;
+	var manifest = [
+		{src:"images/cliff.png", id:"cliff"},
+		{src:"images/co.png", id:"co"},
+		{src:"images/cow.png", id:"cow"},
+		{src:"images/cow2.png", id:"cow2"},
+		{src:"images/cowhead.png", id:"cowhead"},
+		{src:"images/cowhead2.png", id:"cowhead2"},
+		{src:"images/cowl1.png", id:"cowl1"},
+		{src:"images/cowl2.png", id:"cowl2"},
+		{src:"images/cowl3.png", id:"cowl3"},
+		{src:"images/cowl4.png", id:"cowl4"},
+		{src:"images/cowmouth.png", id:"cowmouth"},
+		{src:"images/cowmouthgifcopia.png", id:"cowmouthgifcopia"},
+		{src:"images/cowtail.png", id:"cowtail"},
+		{src:"images/pine.png" , id:"pine"},
+		{src:"images/pines.png", id:"pines"},
+		{src:"sounds/pop.mp3", id:"pop"}
+	];
+
+	var loader = new createjs.LoadQueue(false);
+	loader.installPlugin(createjs.Sound);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(manifest);
+}
+
+function handleFileLoad(evt) {
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+}
+
+function playSound(name, loop) {
+	SoundJS.play(name, SoundJS.INTERRUPT_EARLY, 0, 0, loop);
+}
+
+function handleComplete() {
+	exportRoot = new lib.PlatypusGame2();
+	exportRoot.removeChild(exportRoot.platypus);
+	
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	
+	createjs.Ticker.addEventListener("tick", tick);
+	Touch.enable(stage);
+    Ticker.setFPS(8);
+	Ticker.addListener(window);
+	// add the listener to window, so we can do some work before updating the stage:
+}
+           
+
+function tick(event) {
+  if (platypii.length < 2 || Math.random() < 0.01 && platypii.length < 5) {
+	var Platypus = new lib.Platypus;
+	Platypus.scaleX = Platypus.scaleY = Math.random()*0.5+0.5;
+	Platypus.x = 800;
+	Platypus.y =  Math.random()*(400-Platypus.scaleY*Platypus.nominalBounds.height);
+	Platypus.velX = (1+Platypus.scaleX)*-6;
+	Platypus.velY = 0;
+	platypii.push(Platypus);
+	exportRoot.addChild(Platypus);
+	// we only want to know about clicks on the balloon, not the whole platypus:
+	//Platypus.PlatypusIdle.balloon.onClick = handleBalloonClick;
+	//Platypus.onPopped = handleBalloonPopped;
+	// we only want to know about clicks on the balloon, not the whole platypus:
+	Platypus.platypusIdle.balloon.onClick = handleBalloonClick;
+	Platypus.onPopped = handleBalloonPopped;
+  } 
+	for (var i=platypii.length-1; i>=0; i--) {
+		Platypus = platypii[i];
+
+		// add gravity to the Y velocity if it's falling:
+		if (Platypus.falling) { Platypus.velY += 3;}
+	    Platypus.x += Platypus.velX;
+	    Platypus.y += Platypus.velY;		
+		if (Platypus.x < -Platypus.nominalBounds.width*Platypus.scaleX || Platypus.y > 400) {
+			platypii.splice(i,1);
+			exportRoot.removeChild(Platypus);
+			// add +100 points if it fell or -500 if it escaped
+			updateScore(Platypus.y > 400 ? 100 : -500);
+		}
+	}
+	stage.addChild(Platypus);		
+	stage.update();
+}
+
+function handleBalloonClick(eventObj) {
+	// eventObj.target is the balloon that was clicked. Grab the platypus instance:
+	var Platypus = eventObj.target.parent.parent;
+	Platypus.gotoAndPlay("pop");
+}
+
+function handleBalloonPopped(Platypus) {
+	Platypus.falling = true;
+	
+}
+
+function updateScore(delta) {
+	score = Math.max(0,score + delta);
+	exportRoot.scoreTxt.text = "Puntuación: "+score;
+}
+</script>
+<style type="text/css">
+        #d1,#ci1,#ci2,#ci3{position:absolute;top:0px;left:0px}            
+
+        .cc2{   -webkit-animation-duration: 1s; -webkit-animation-name: loading2w; -webkit-animation-iteration-count:infinite;  -moz-animation-duration: 1s; -moz-animation-name: loading2m; -moz-animation-iteration-count:infinite;   -o-animation-duration: 1s; -o-animation-name: loading2o; -o-animation-iteration-count:infinite;}
+        .cc3{   -webkit-animation-duration: 1s; -webkit-animation-name: loading3w; -webkit-animation-iteration-count:infinite;  -moz-animation-duration: 1s; -moz-animation-name: loading3m; -moz-animation-iteration-count:infinite;   -o-animation-duration: 1s; -o-animation-name: loading3o; -o-animation-iteration-count:infinite;}            
+        @-webkit-keyframes loading2w{
+            0%{visibility:hidden;} 
+            33%{visibility:hidden;} 
+            33.33%{visibility:visible;} 
+            100%{visibility:hidden;}   
+        }
+        @-moz-keyframes loading2m{
+            0%{visibility:hidden;} 
+            33%{visibility:hidden;} 
+            33.33%{visibility:visible;} 
+            100%{visibility:hidden;}   
+        }
+        @-o-keyframes loading2o{
+            0%{visibility:hidden;} 
+            33%{visibility:hidden;} 
+            33.33%{visibility:visible;} 
+            100%{visibility:hidden;}   
+        }
+        @-webkit-keyframes loading3w
+        {
+            0%{visibility:hidden;} 
+            66.33%{visibility:hidden;} 
+            66.67%{visibility:visible;} 
+            100%{visibility:hidden;}   
+        }
+        @-moz-keyframes loading3m
+        {
+            0%{visibility:hidden;} 
+            66.33%{visibility:hidden;} 
+            66.67%{visibility:visible;} 
+            100%{visibility:hidden;}   
+        }
+        @-o-keyframes loading3o
+        {
+            0%{visibility:hidden;} 
+            66.33%{visibility:hidden;} 
+            66.67%{visibility:visible;} 
+            100%{visibility:hidden;}   
+        }
+    </style>
+    <script type="text/javascript">
+        window.addEventListener("load",win_load,false);
+        function win_load()
+        {                
+            var c10=document.getElementById("canvas");var ctx10=c10.getContext("2d");ctx10.fillStyle="#f00";ctx10.font="15pt Calibri";ctx10.fillText("Loading .",5,15);            
+        }
+    </script>
+
+	  
+</head>
+<div class="container" align="center">
+<body onload="init();" style="background-color:#D4D4D4">
+	<header class="jumbotron subhead" align="center"  id="overview">
+    <h1 align="center">COW GAME</h1>
+    <p align="center">by Ramón Tenreiro</p>
+</header>
+
+  <div class="container" align="justify">
+
+        <!-- Global settings
+        ================================================== -->
+        <section id="global">
+          <p>I created this game in Flash and then migrated it to HTML5 and made it playable through JavaScript (credits Grant Skinner). We witnessed a terrible vision of cows (Tenreiros) in an air attack using balloons. We will have to click on them with the mouse to avoid losing points.</p>
+<canvas id="canvas" align="center" width="800" height="400" style="background-color:#ffffff"></canvas>
+<p> Pinche los globos con el ratón"</p>
+  <!-- Footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <p>Designed and built by Ramon Tenreiro. <p>&copy; 2014- 2024 </p>
+      </div>
+    </footer>
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+   </body></html>
