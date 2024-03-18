@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Arbol Familia Ramón Tenreiro 1ª Generación</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sharing things with you Ramon Tenreiro">
+    <meta name="author" content="Ramon Tenreiro">
+    <meta property='og:title' content='Ramon Tenreiro | Resume'/>
+    <meta property='og:description' content='Architecture, MBA, Real Estate Developer'/>
+    <meta property='og:url' content='https://rtenreiro.github.io/'/>
+    <meta property='og:site_name' content='Ramon Tenreiro'/>
+    <meta property='og:type' content='website'/>
+        <link rel="shortcut icon" href="images/favicon32.png">
+        <link href="css/style.default.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif, Arial;
+            font-size: 10pt;
+        }
+
+        .tree {
+            white-space: nowrap;
+            min-width: 500px;
+            min-height: 200px;
+        }
+
+        .tree ul {
+            padding-top: 20px;
+            position: relative;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+
+        .tree li {
+            float: left;
+            text-align: center;
+            list-style-type: none;
+            position: relative;
+            padding: 20px 5px 0 5px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+
+        .tree li::before,
+        .tree li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            border-top: 1px solid #ccc;
+            width: 50%;
+            height: 20px;
+        }
+
+        .tree li::after {
+            right: auto;
+            left: 50%;
+            border-left: 1px solid #ccc;
+        }
+
+        .tree li:only-child::after,
+        .tree li:only-child::before {
+            display: none;
+        }
+
+        .tree li:only-child {
+            padding-top: 0;
+        }
+
+        .tree li:first-child::before,
+        .tree li:last-child::after {
+            border: 0 none;
+        }
+
+        .tree li:last-child::before {
+            border-right: 1px solid #ccc;
+            border-radius: 0 5px 0 0;
+            -webkit-border-radius: 0 5px 0 0;
+            -moz-border-radius: 0 5px 0 0;
+        }
+
+        .tree li:first-child::after {
+            border-radius: 5px 0 0 0;
+            -webkit-border-radius: 5px 0 0 0;
+            -moz-border-radius: 5px 0 0 0;
+        }
+
+        .tree ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-left: 1px solid #ccc;
+            width: 0;
+            height: 20px;
+        }
+
+        .tree li div {
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #666;
+            font-family: arial, verdana, tahoma;
+            font-size: 11px;
+            display: inline-block;
+            min-width: 250px; /* Adjusted width for grandparents */
+            min-height: 30px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+        }
+
+        .tree li div .male {
+            background-color: lightblue;
+            display: inline-block;
+            width: 250px;
+            padding: 10px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+        }
+
+        .tree li div .female {
+            background-color: lightpink;
+            display: inline-block;
+            width: 250px;
+            padding: 10px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+        }
+
+        .tree li div .spacer {
+            background-color: lightblue;
+            display: inline-block;
+            width: 10px;
+        }
+
+        /* Time for some hover effects */
+        /* We will apply the hover effect to the lineage of the element also */
+        .tree li div:hover,
+        .tree li div:hover + ul li div {
+            background: #c8e4f8;
+            color: #000;
+            border: 1px solid #94a0b4;
+        }
+
+        /* Connector styles on hover */
+        .tree li div:hover + ul li::after,
+        .tree li div:hover + ul li::before,
+        .tree li div:hover + ul::before,
+        .tree li div:hover + ul ul::before {
+            border-color: #94a0b4;
+        }
+    </style>
+</head>
+<body>
+  <div class="mainpanel">
+                    <div class="pageheader">
+                        <div class="media">
+                            <div class="pageicon pull-left">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <div class="media-body">
+                                <ul class="breadcrumb">
+                                    <li><a href=""><i class="glyphicon glyphicon-home"></i></a></li>
+                                    <li><a href="">Arbol de Familia de Ramón Tenreiro González-Llanos</a></li>
+                                    <li>Por Generaciones</li>
+                                </ul>
+                                <h4>1ª Generación Desde 1891 - 2024</h4>
+                            </div>
+                        </div><!-- media -->
+                    </div><!-- pageheader -->
+                    
+                    <div class="contentpanel">  
+                        <div class="row" align="center">
+                            <div class="col-sm-10 col-md-5">
+                                <div class="text-center">
+                                    <img src="img/RTB2.jpg" class="img-circle img-offline" alt="" />
+                                    <h4 class="profile-name mb5">Ramón María Tenreiro Brochón</h4>
+                                    <div><i class="fa fa-map-marker"></i> A Coruña 1928 - A Coruña 2016</div>
+                                    <div><i class="fa fa-briefcase"></i> Arquitecto </div>
+                                </div>                           
+                            </div><!-- col-sm-4 col-md-3 -->
+                            <div class="col-sm-10 col-md-5">
+                                <div class="text-center">
+                                    <img src="img/HITA.jpg" class="img-circle img-offline" alt="" />
+                                    <h4 class="profile-name mb5">Hita González-Llanos Galvache</h4>
+                                    <div><i class="fa fa-map-marker"></i> Ferrol 1932 - Ferrol 1963</div>
+                                    <div><i class="fa fa-briefcase"></i> Licenciada en Filosofía y letras </div>
+                                </div>                           
+                            </div><!-- col-sm-4 col-md-3 -->
+                        </div class="row"><!-- row -->
+                        </div class="row"><!-- row -->
+                        <h3 align="center">Arbol genealógico 1-3 generaciones: desde 1891 a 2024</h3>
+                        <div class="row">
+                        <div class="row">
+                        <div class="tree">
+                            <ul>
+                            <li>
+                            <div><span class="male">Ramón Tenreiro Gonzalez-LLanos<br>1958  </span></div>
+                            <ul>
+                            <li>
+                            <div><span class="male">Ramón Tenreiro Brochón <br>1928-2016</span><span class="spacer"></span><span class="female">Humbelina González-Llanos Galvache<br>1932-1963</span></div>
+                            <ul>
+                            <li>
+                            <div><span class="male">Antonio Tenreiro Rodriguez<br>1893-1972</span><span class="spacer"></span><span class="female">Matilde Brochón Reinmann<br>1891-1973</span></div>
+                            </li>
+                            <li>
+                            <div><span class="male">José María González-Llanos Caruncho<br>1899-1990</span><span class="spacer"></span><span class="female">Ignacia Galvache Cerón<br>1905-1979</span></div>
+                            </li>
+                            </ul>
+                            </li>
+                            </ul>
+                            </li>
+                            </ul>
+                            </div class="tree"><!-- tree -->
+                            </div class="row"><!-- row -->
+                            </div class="row"><!-- row -->
+                        <h4 align="center">3 generación: desde 1891 a 1990</h4>
+                        <div class="row">
+                            <div class="row">
+                            <div class="col-sm-4 col-md-3">
+                                <div class="text-center">
+                                    <img src="img/ATR.jpg" class="img-circle img-offline" alt="" />
+                                    <h4 class="profile-name mb5">Antonio Tenreiro Rodríguez</h4>
+                                    <div><i class="fa fa-map-marker"></i> A Coruña 1893 - A Coruña 1972</div>
+                                    <div><i class="fa fa-briefcase"></i> Arquitecto </div>
+                                </div>                           
+                            </div><!-- col-sm-6 col-md-5 -->
+                            <div class="col-sm-4 col-md-3">
+                                <div class="text-center">
+                                    <img src="img/MBR.jpg" class="img-circle img-offline" alt=""  />
+                                    <h4 class="profile-name mb5">Matilde Brochón Reinmann</h4>
+                                    <div><i class="fa fa-map-marker"></i> Paris 1891 - A Coruña 1973</div>
+                                    <div><i class="fa fa-briefcase"></i> Emprendedora </div>
+                                </div>                           
+                            </div><!-- col-sm-6 col-md-5 -->
+                            <div class="col-sm-4 col-md-3">
+                                <div class="text-center">
+                                    <img src="img/JMGLLC.jpg" class="img-circle img-offline" alt="" />
+                                    <h4 class="profile-name mb5">José María González-Llanos Caruncho</h4>
+                                    <div><i class="fa fa-map-marker"></i> Ferrol 1899 - Ferrol 1990</div>
+                                    <div><i class="fa fa-briefcase"></i> ContraAlmirante Ingeniero Naval Emprendedor </div>
+                                </div>                           
+                            </div><!-- col-sm-6 col-md-5 -->
+                            <div class="col-sm-4 col-md-3">
+                                <div class="text-center">
+                                    <img src="img/IGC.jpg" class="img-circle img-offline" alt="" />
+                                    <h4 class="profile-name mb5">Mª Ignacia Galvache Cerón</h4>
+                                    <div><i class="fa fa-map-marker"></i> Cartagena 1905 - Ferrol 1979</div>
+                                    <div><i class="fa fa-briefcase"></i> Licenciada </div>
+                                </div>                           
+                            </div><!-- col-sm-6 col-md-5 -->
+
+
+                        </div class="row"><!-- row -->
+
+
+</body>
+</html>
