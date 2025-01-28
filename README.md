@@ -1,2 +1,2 @@
-htts://-rtenreiro.github.io/
+htts://rtenreiro.github.io/
 # My Web page / Mi página web
